@@ -38,11 +38,13 @@ public class SpringSecurityApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		Role role1 = createRole("ADMIN_L1",Arrays.asList("ADMIN_WRITE","ADMIN_DELETE"));
-		Role role2 = createRole("ADMIN_L2",Arrays.asList("ADMIN_WRITE"));
+		Role role1 = createRole("USER_L1",Arrays.asList("WRITE","READ","DELETE"));
+		Role role2 = createRole("USER_L2",Arrays.asList("READ"));
+		Role role3 = createRole("USER_L3",Collections.emptyList());
 
 		createUserRole("shef1",Arrays.asList(role1));
 		createUserRole("shef2",Arrays.asList(role2));
+		createUserRole("shef3",Arrays.asList(role3));
 
 	}
 
